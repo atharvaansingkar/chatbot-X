@@ -1,36 +1,36 @@
-// src/components/Chatbot.js
-
-import React from 'react';
-import { Widget, addResponseMessage } from 'react-chat-widget';
+import React, { useEffect } from 'react';
+import { Widget, addResponseMessage, addUserMessage } from 'react-chat-widget';
 import 'react-chat-widget/lib/styles.css';
 import axios from 'axios';
 
-function Chatbot() {
-  React.useEffect(() => {
-    addResponseMessage('Welcome to the chatbot!');
+const Chatbot = () => {
+  useEffect(() => {
+    // Initial welcome message
+    addResponseMessage('Hello! How can I help you today?');
   }, []);
 
-  const handleNewUserMessage = async (newMessage) => {
-    try {
-      const response = await axios.post('http://localhost:5000/chat', {
-        userId: 'user123',
-        message: newMessage,
+  const handleNewUserMessage = (newMessage) => {
+    axios.post('http://localhost:5000/webhooks/rest/webhook', {
+      sender: 'user',
+      message: newMessage
+    }).then(response => {
+      response.data.forEach(message => {
+        if (message.text) {
+          addResponseMessage(message.text);
+        }
       });
-      response.data.forEach((msg) => addResponseMessage(msg.text));
-    } catch (error) {
-      console.error('Error sending message to backend:', error);
-      
-      addResponseMessage('Error communicating with the server.');
-    }
+    }).catch(error => {
+      console.error('Error communicating with Rasa:', error);
+    });
   };
 
   return (
     <Widget
       handleNewUserMessage={handleNewUserMessage}
-      title="Educational Chatbot"
-      subtitle="Ask me anything about the courses!"
+      title="Chatbot"
+      subtitle="Ask me anything"
     />
   );
-}
+};
 
 export default Chatbot;
