@@ -1,36 +1,55 @@
-import React, { useEffect } from 'react';
-import { Widget, addResponseMessage, addUserMessage } from 'react-chat-widget';
+import React from 'react';
+import { Widget, addResponseMessage, toggleMsgLoader, addLinkSnippet } from 'react-chat-widget';
 import 'react-chat-widget/lib/styles.css';
 import axios from 'axios';
 
-const Chatbot = () => {
-  useEffect(() => {
-    // Initial welcome message
-    addResponseMessage('Hello! How can I help you today?');
-  }, []);
+class Chatbot extends React.Component {
+  componentDidMount() {
+    // Add initial welcome message
+    addResponseMessage("Welcome! How can I assist you today?");
+  }
 
-  const handleNewUserMessage = (newMessage) => {
-    axios.post('http://localhost:5000/webhooks/rest/webhook', {
-      sender: 'user',
-      message: newMessage
-    }).then(response => {
-      response.data.forEach(message => {
-        if (message.text) {
-          addResponseMessage(message.text);
+  // Function to handle new messages from the user
+  handleNewUserMessage = async (newMessage) => {
+    toggleMsgLoader(); // Start loader
+
+    try {
+      // Send user message to Rasa backend
+      const response = await axios.post('http://localhost:5005/webhooks/rest/webhook', {
+        sender: "user", // Static sender id
+        message: newMessage,
+      });
+
+      // Process Rasa bot's response
+      response.data.forEach((msg) => {
+        if (msg.text) {
+          // Add text response from the bot
+          addResponseMessage(msg.text);
+        }
+        if (msg.image) {
+          // Add image link as a clickable snippet
+          addLinkSnippet({ link: msg.image, title: "Click to view image" });
         }
       });
-    }).catch(error => {
-      console.error('Error communicating with Rasa:', error);
-    });
+    } catch (error) {
+      console.error("Error communicating with Rasa:", error);
+    }
+
+    toggleMsgLoader(); // Stop loader
   };
 
-  return (
-    <Widget
-      handleNewUserMessage={handleNewUserMessage}
-      title="Chatbot"
-      subtitle="Ask me anything"
-    />
-  );
-};
+  render() {
+    return (
+      <div className="App">
+        {/* The chat widget */}
+        <Widget
+          handleNewUserMessage={this.handleNewUserMessage}
+          title="Rasa Chatbot"
+          subtitle="Ask me anything"
+        />
+      </div>
+    );
+  }
+}
 
 export default Chatbot;
