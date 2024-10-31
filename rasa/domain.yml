@@ -8,14 +8,52 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - query_vit
+  - query_tabs
+  - query_volp
+  - query_vierp
+  - query_academics
+  - query_examination
+  - query_certificate
+  - query_labs
+  - query_fee
+  - query_backlog
+  - query_new_student
+  - query_stress_academics
 
 responses:
+  utter_answer:
+  - text: "You can find more information on this topic [here](https://www.vit.edu/)."
+  utter_tabs:
+  - text: "The Vierp website has many tabs including Academics, Accounts, Admission, Assignments, Quiz, VOLP etc."
+  utter_volp:
+  - text: "The VOLP website is for academic resources and assignment submission.\nThe weblink is [here](https://classroom.volp.in/)."
+  utter_vierp:
+  - text: "The Vierp website is a Student portal of VIT.\nThe weblink is [here](https://learner.vierp.in/)."
+  utter_academics:
+  - text: "Academics section assists you with the academic calender, attendance and lesson plan.\nThe weblink is [here](https://learner.vierp.in/Academics)."
+  utter_examination:
+  - text: "The examination section provides you with Marksheet and passing certificate.\nThe weblink is [here](https://learner.vierp.in/Examination)."
+  utter_labs:
+  - text: "Our college conducts lab exams in every semester. You have to complete them in the lab examination section.\nThe weblink is [here](https://learner.vierp.in/labExamination)."
+  utter_reframe:
+  - text: "Could you please reframe your query"
   utter_greet:
   - text: "Hey! How are you?"
-
+  utter_certificate:
+  - text: "Certificates\nThe weblink is [here](https://learner.vierp.in/document-request)."
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
     image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_backlog:
+  - text: "The backlog registration portal.\nThe weblink is [here](https://learner.vierp.in/Registration)."
+  utter_new_student:
+  - text: "Welcome to college! 🎉 It's a big step, but don't worry—you'll settle in soon. Here are a few tips to help you get started:\n\n. **Explore the Campus**: Take some time to explore your surroundings. Find out where your classes, library, cafeteria, and study spots are. Familiarity will help ease the nerves.\n. **Join Clubs and Events**: Getting involved in student clubs, organizations, or attending campus events is a great way to meet new people and discover your interests.\n. **Stay Organized**: With multiple classes and activities, keeping a planner or using an app for scheduling assignments and deadlines can save you a lot of stress.\n. **Make New Friends**: Don't hesitate to introduce yourself to classmates or dorm neighbors. Everyone's in the same boat trying to meet new people!\n. **Ask for Help**: Don't be afraid to reach out to professors, mentors, or student services if you need guidance on academics or adjusting to college life.\n\nAnd most importantly, give yourself time to adjust. It’s okay to feel overwhelmed, but every step forward counts!"
+
+  utter_fee:
+  - text: "Get your fee payment proofs [here](https://learner.vierp.in/LearnerReceiptReport)."
+  utter_stress_academics:
+  - text: "It's completely normal to feel stressed about academics at times, but there are ways to manage it:\n\n1. **Break Tasks into Smaller Steps**: Focus on one task at a time, instead of feeling overwhelmed by the bigger picture.\n\n2. **Create a Schedule**: Plan your study time and give yourself breaks. Time management can reduce stress significantly.\n\n3. **Reach Out for Help**: Don't hesitate to talk to professors, mentors, or counselors if you're struggling. They are there to support you.\n\n4. **Take Care of Yourself**: Make sure you're getting enough rest, eating well, and taking breaks to relax.\n\n5. **Study in Groups**: Working with classmates can help you stay motivated and clear up confusion about difficult topics.\n\nRemember, it's okay to ask for help and take things one step at a time. You've got this!"
 
   utter_did_that_help:
   - text: "Did that help you?"

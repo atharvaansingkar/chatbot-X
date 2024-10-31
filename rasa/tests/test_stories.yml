@@ -89,3 +89,10 @@ stories:
       are you a bot?
     intent: bot_challenge
   - action: utter_iamabot
+
+- story: vit
+  steps:
+  - user: |
+      What is VIT?
+    intent: query_vit
+  - action: utter_answer

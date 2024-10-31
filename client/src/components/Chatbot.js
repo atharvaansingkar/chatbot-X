@@ -13,7 +13,6 @@ class Chatbot extends React.Component {
   handleNewUserMessage = async (newMessage) => {
     toggleMsgLoader(); // Start loader
 
-
     try {
       // Send user message to Rasa backend
       const response = await axios.post('http://localhost:5005/webhooks/rest/webhook', {

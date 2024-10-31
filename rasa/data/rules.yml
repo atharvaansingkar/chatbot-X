@@ -11,3 +11,63 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Say vit answer
+  steps:
+  - intent: query_vit
+  - action: utter_answer
+
+- rule: Say vit tabs
+  steps:
+  - intent: query_tabs
+  - action: utter_tabs
+
+- rule: volp
+  steps:
+  - intent: query_volp
+  - action: utter_volp
+
+- rule: vierp
+  steps:
+  - intent: query_vierp
+  - action: utter_vierp
+
+- rule: academics
+  steps:
+  - intent: query_academics
+  - action: utter_academics
+
+- rule: examination
+  steps:
+  - intent: query_examination
+  - action: utter_examination
+
+- rule: certificate
+  steps:
+  - intent: query_certificate
+  - action: utter_certificate
+
+- rule: labs
+  steps:
+  - intent: query_labs
+  - action: utter_labs
+
+- rule: fee
+  steps:
+  - intent: query_fee
+  - action: utter_fee
+
+- rule: backlog
+  steps:
+  - intent: query_backlog
+  - action: utter_backlog
+
+- rule: new student
+  steps:
+  - intent: query_new_student
+  - action: utter_new_student
+
+- rule: student stress
+  steps:
+  - intent: query_stress_academics
+  - action: utter_stress_academics

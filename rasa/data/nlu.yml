@@ -48,6 +48,7 @@ nlu:
     - don't like that
     - no way
     - not really
+    - i wanted something different
 
 - intent: mood_great
   examples: |
@@ -66,22 +67,7 @@ nlu:
     - so good
     - so perfect
 
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+
 
 - intent: bot_challenge
   examples: |
@@ -89,3 +75,87 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: query_vit
+  examples: |
+    - What is VIT?
+    - Where is the college website?
+    - Open college website
+
+- intent: query_volp
+  examples: |
+    - What is volp?
+    - Open volp
+
+- intent: query_vierp
+  examples: |
+    - What is vierp?
+    - Open vierp
+
+- intent: query_tabs
+  examples: |
+    - What does the website provide?
+    - What are the tabs here?
+
+- intent: query_academics
+  examples: |
+    - How to get my academics?
+    - Where is academic section?
+    - Where to see my attendance?
+
+- intent: query_examination
+  examples: |
+    - Where is schedule of exams?
+    - What can I get information on examination?
+    - Get me my marksheet.
+    - Where to get my marksheet?
+
+- intent: query_certificate
+  examples: |
+    - Where are my certificates?
+    - Get me my certificates
+
+- intent: query_labs
+  examples: |
+    - Lab examination
+    - get me my lab exams
+    - labs
+
+- intent: query_fee
+  examples: |
+    - Where to get free receipt?
+    - I want proof of fee payment
+
+- intent: query_new_student
+  examples: |
+    - I'm new to college. What should I do?
+    - I'm starting college soon, any tips?
+    - What should I know as a new college student?
+    - I'm a first-year student, any suggestions?
+    - How should I prepare for my first semester in college?
+    - I'm new in college, what do you recommend?
+    - Can you give me some college advice?
+    - I'm nervous about starting college, help?
+    - What should I do in my first week of college?
+
+- intent: query_backlog
+  examples: |
+    - I want to clear backlog
+    - backlog
+    - How do I clear my backlog?
+    - backlog registration
+    - What should I do to handle my backlog?
+    - How can I register for backlog exams?
+    - Help with backlog registration
+
+- intent: query_stress_academics
+  examples: |
+    - I'm stressed about my academics.
+    - I'm not able to cope with my studies.
+    - I'm falling behind in my courses.
+    - How do I handle academic pressure?
+    - I'm overwhelmed by my studies.
+    - What should I do if I'm struggling with academics?
+    - I can't keep up with my classes.
+    - I'm having a hard time managing my studies.
+    - I'm feeling anxious about my academic performance.
